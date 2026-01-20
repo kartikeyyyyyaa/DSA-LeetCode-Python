@@ -15,7 +15,7 @@ class Solution:
                         return True
             return False
         
-        l, r, ans = 1, min(m, n), 0
+        l, r, an = 1, min(m, n), 0
         while l <= r:
             mid = (l + r) // 2
             if possible(mid):
@@ -24,4 +24,4 @@ class Solution:
             else:
                 r = mid - 1
         
-        return ans
+        return an
