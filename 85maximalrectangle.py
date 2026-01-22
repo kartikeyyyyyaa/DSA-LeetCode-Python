@@ -18,7 +18,7 @@ class Solution:
         return max_area
     def largestRectangleArea(self, heights: list[int]) -> int:
         stack = [] 
-        max_a = 0
+        maxa = 0
         heights_with_sentinel = heights + [0]
         
         for i, h in enumerate(heights_with_sentinel):
@@ -26,8 +26,9 @@ class Solution:
             while stack and stack[-1][1] > h:
                 idx, height = stack.pop()
                 width = i - idx 
-                max_a = max(max_a, height * width)
+                maxa = max(maxa, height * width)
                 start_index = idx 
             stack.append((start_index, h))
             
-        return max_a
+
+        return maxa
